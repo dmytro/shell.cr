@@ -48,7 +48,7 @@ puts Shell.run("command_with_non_zero_status", fail_on_error: false).stderr
 
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/shell/fork )
+1. Fork it ( https://github.com/dmytro/shell/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -56,4 +56,4 @@ puts Shell.run("command_with_non_zero_status", fail_on_error: false).stderr
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Dmytro Kovalov - creator, maintainer
+- [dmytro](https://github.com/dmytro) Dmytro Kovalov - creator, maintainer
