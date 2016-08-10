@@ -1,10 +1,13 @@
 # shell
 
-Small simplistic wrapper for executing shell commands in Crystal:
+Small simplistic helper class for executing shell commands in Crystal:
 
-- run command, exit
-- if it fails
-- return STDOUT of the command.
+- run command,
+- exit if it fails,
+- return STDOUT of the command;
+- optionally
+  - allow to ignore failure
+  - return STDERR of failed command.
 
 ## Installation
 
@@ -14,7 +17,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   shell:
-    github: [your-github-name]/shell
+    github: dmytro/shell.cr
 ```
 
 
@@ -25,12 +28,23 @@ dependencies:
 require "shell"
 ```
 
+Output of the shell command is available through `#stdout` and `#stderr`
+methods, numeric value of the exit status returned by the function `#run`.
 
-TODO: Write usage instructions here
+Simplest usage of the `#run` method:
 
-## Development
+```
+puts Shell.run("ls").stdout
+```
 
-TODO: Write development instructions here
+
+If command fails `Shell` raises exception, but this behaviour can be
+overridden by `fail_on_error` variable:
+
+```
+  puts Shell.run("command_with_non_zero_status", fail_on_error: false).stderr
+```
+
 
 ## Contributing
 

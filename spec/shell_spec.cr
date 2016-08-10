@@ -1,7 +1,5 @@
 require "./spec_helper"
 
-
-
 Spec2.describe "Shell" do
 
   describe "#run" do
@@ -9,11 +7,9 @@ Spec2.describe "Shell" do
 
     context "good command" do
 
-
       it "does not fail" do
         expect { subject.run }.not_to raise_error Exception
       end
-
 
       context "output" do
         before {subject.run}
@@ -35,18 +31,13 @@ Spec2.describe "Shell" do
         end
 
       end
-      # end
 
       context "when command returns an error" do
         subject { Shell.new("ls nonexistenfile")}
         it "fails" { expect { subject.run}.to raise_error Exception }
       end
-      # it "stderr returns error message" { pending "todo" {} }
-      # it "stdout is empty" { pending "todo" {} }
 
-
-      context "when errors ignored" do
-
+      context "when fail_on_error: false" do
 
         subject { Shell.new(command, fail_on_error: false) }
 
