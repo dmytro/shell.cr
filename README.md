@@ -33,7 +33,7 @@ methods, numeric value of the exit status returned by the function `#run`.
 
 Simplest usage of the `#run` method:
 
-```
+```crystal
 puts Shell.run("ls").stdout
 ```
 
@@ -41,8 +41,8 @@ puts Shell.run("ls").stdout
 If command fails `Shell` raises exception, but this behaviour can be
 overridden by `fail_on_error` variable:
 
-```
-  puts Shell.run("command_with_non_zero_status", fail_on_error: false).stderr
+```crystal
+puts Shell.run("command_with_non_zero_status", fail_on_error: false).stderr
 ```
 
 
