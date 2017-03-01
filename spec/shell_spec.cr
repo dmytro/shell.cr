@@ -52,7 +52,7 @@ Spec2.describe "Shell" do
 
             it "stderr not empty" { expect(subject.stderr).not_to eq "" }
             it "stderr contains error message" {
-              expect(subject.stderr).to match(/command not found/)
+              expect(subject.stderr).to match(/not found/)
             }
             it "stdout is empty" { expect(subject.stdout).to eq "" }
 
