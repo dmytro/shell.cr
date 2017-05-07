@@ -1,8 +1,8 @@
 class Shell
 
   def initialize(@cmd : String,
-                 @stdout : Stdio = MemoryIO.new,
-                 @stderr : Stdio = MemoryIO.new,
+                 @stdout : Process::Stdio = IO::Memory.new,
+                 @stderr : Process::Stdio = IO::Memory.new,
                  @fail_on_error : Bool = true
                 )
     @status = 0
