@@ -1,5 +1,7 @@
-/doc/
+/.deps/
+/lib/
 /libs/
+/doc/
 /.crystal/
 /.shards/
 
